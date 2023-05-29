@@ -1,0 +1,49 @@
+<!-- David Cooksey Jr. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="pageStyle" rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dycalendar.css">
+    <link rel="shortcut icon" href="assets/calendar.png" type="image/x-icon">
+    <title>Calendar</title>
+</head>
+<body onload="chooseTheme()"><!-- new feature 1 -->
+    <section>
+        <h1>Calendar</h1><br />
+        <p>Click Today to add an event for today to the console.</p><!-- new feature 2 -->
+        <div class="box">
+            <div class="container">
+                <div id="dycalendar" ></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&#x3c; &#47; &#x3e; with ❤️ by 
+          <a href="https://swapnilsparsh.github.io/">Swapnil Srivastava</a>
+          <br> 
+          <a href="https://github.com/swapnilsparsh/30DaysOfJavaScript" target="_blank">#30DaysOfJavaScript
+          </a>
+        </p>
+      </footer>
+    <script src="dycalendar.js"></script>
+    <script src="main.js"></script>
+    <script type="text/javascript">// new feature 1
+        function chooseTheme() { // code adapted from: https://youtu.be/bNtyTGBtbK4 and https://youtu.be/_XAQH41rjio
+            var result = confirm("Click OK to use the dark theme and Cancel to use the light theme.");
+            if (result == true) {
+                swap('style.css')
+            }
+            else if (result == false) {
+                swap('darkStyle.css')
+            }
+        }
+        function swap(sheet) {
+            document.getElementById('pageStyle').setAttribute('href', sheet)
+        }
+    </script>
+</body>
+</html>
